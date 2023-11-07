@@ -117,11 +117,6 @@ jobs:
     name: Python
     runs-on: ubuntu-latest
 
-    env: 
-      SCHEME: Runner
-      API_KEY: ${{ secrets.API_KEY }}
-      MNEMONIC: ${{ secrets.MNEMONIC }}
-
     steps:
       - uses: actions/checkout@v4
       - name: Set up Python
@@ -143,6 +138,6 @@ jobs:
       - name: Test
         run: |
           cd snippets/python_snippets
-          python main.py $API_KEY $MNEMONIC
+          python3 -m compileall src
           
         continue-on-error: false

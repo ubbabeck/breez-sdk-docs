@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 
+
 import breez_sdk
 from src.getting_started import getting_started,getting_started_node_info
 from src.connecting_lsp import get_lsp_info, connect_lsp
@@ -15,7 +16,6 @@ from src.lnurl_pay import pay
 from src.lnurl_withdraw import withdraw
 import tempfile
 
-import os
 
 class SDKListener(breez_sdk.EventListener):
    def on_event(self, event):
@@ -26,8 +26,8 @@ def main():
    temp_dir = tempfile.TemporaryDirectory()
 
    
-   api_key = os.getenv("API_KEY")
-   mnemonic = os.getenv("MNEMONIC")
+   api_key = "API_KEY"
+   mnemonic = "MNEMONIC"
 
    # getting started
    sdk_services =  getting_started(api_key, mnemonic, temp_dir.name)    
@@ -47,7 +47,7 @@ def main():
    current_fees = get_current_fees(sdk_services)
    list_current_fees(current_fees)
    check_reverse_swap_status(sdk_services)
-   # start_reverse_swap(sdk_services,current_fees, 7)
+   start_reverse_swap(sdk_services,current_fees, 7)
 
    # static backup
    temp_dir2 = tempfile.TemporaryDirectory()
@@ -64,20 +64,20 @@ def main():
    get_channel_opening_fees(sdk_services,3000000)
 
    #send spontaneous payment
-   #send_spontaneous_payment(sdk_services)
+   send_spontaneous_payment(sdk_services)
 
    # fiat currencies
    list_supported_fiat_currencies(sdk_services)
    get_current_rates(sdk_services)
 
    # lnurl auth
-   #auth(sdk_services)
+   auth(sdk_services)
 
    # lnurl pay
-   #pay(sdk_services)
+   pay(sdk_services)
 
    # lnurl withdraw 
-   #withdraw(sdk_services)
+   withdraw(sdk_services)
 
 
 
