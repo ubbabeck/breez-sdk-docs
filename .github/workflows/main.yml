@@ -263,7 +263,7 @@ jobs:
 
       - name: Check python formatting
         working-directory: snippets/python/src
-        run: ruff --ignore F841 --ignore F401 --output-format=github .
+        run: ruff --ignore F841 --ignore F401 
 
       - name: Check python syntax
         working-directory: snippets/python
