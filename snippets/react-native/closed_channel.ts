@@ -12,7 +12,7 @@ import {
     // ANCHOR_END: prepare-redeem-onchain-funds
   }
 
-  const exampleRedeemOnchainFunds = async (satPerVbyte: number, toAddress: String) => {
+  const exampleRedeemOnchainFunds = async (satPerVbyte: number, toAddress: string) => {
     // ANCHOR: redeem-onchain-funds
     const redeemOnchainFundsResp = await redeemOnchainFunds({ toAddress, satPerVbyte })
      // ANCHOR_END: redeem-onchain-funds
