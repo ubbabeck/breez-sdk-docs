@@ -17,6 +17,7 @@
     {
       devShells.default = pkgs.mkShell {
         buildInputs = with pkgs; [
+          zulu17
           kotlin
           ktlint
         ];
