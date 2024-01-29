@@ -15,14 +15,15 @@
       pkgs = nixpkgs.legacyPackages.${system};
     in
     {
+     # TODO add an overlay to set java 17 for gradle 
       devShells.default = pkgs.mkShell {
         buildInputs = with pkgs; [
-          zulu17
           kotlin
           ktlint
+          gradle
         ];
       };
-
+      
       formatter = pkgs.nixpkgs-fmt;
     });
 }
